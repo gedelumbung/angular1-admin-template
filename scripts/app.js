@@ -63,14 +63,6 @@ angular
                 templateUrl: 'views/admin/login.html',
                 url: '/admin/login'
             })
-            .state('dashboard.admin-index', {
-                templateUrl: 'views/admin/index.html',
-                url: '/admin/index'
-            })
-            .state('dashboard.umkm', {
-                templateUrl: 'views/umkm/login.html',
-                url: '/umkm/login'
-            })
             .state('dashboard.umkm-index', {
                 templateUrl: 'views/umkm/index.html',
                 url: '/umkm/index'
