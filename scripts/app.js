@@ -13,7 +13,7 @@ angular
             events: true,
         });
 
-        $urlRouterProvider.otherwise('/dashboard/home');
+        $urlRouterProvider.otherwise('/login');
 
         $stateProvider
             .state('dashboard', {
@@ -26,8 +26,7 @@ angular
                                 files: [
                                     'scripts/directives/header/header.js',
                                     'scripts/directives/header/header-notification/header-notification.js',
-                                    'scripts/directives/sidebar/sidebar.js',
-                                    'scripts/directives/sidebar/sidebar-search/sidebar-search.js'
+                                    'scripts/directives/sidebar/sidebar.js'
                                 ]
                             }),
                             $ocLazyLoad.load({
@@ -59,5 +58,21 @@ angular
             .state('dashboard.table', {
                 templateUrl: 'views/table.html',
                 url: '/table'
+            })
+            .state('dashboard.admin', {
+                templateUrl: 'views/admin/login.html',
+                url: '/admin/login'
+            })
+            .state('dashboard.admin-index', {
+                templateUrl: 'views/admin/index.html',
+                url: '/admin/index'
+            })
+            .state('dashboard.umkm', {
+                templateUrl: 'views/umkm/login.html',
+                url: '/umkm/login'
+            })
+            .state('dashboard.umkm-index', {
+                templateUrl: 'views/umkm/index.html',
+                url: '/umkm/index'
             })
     }]);
