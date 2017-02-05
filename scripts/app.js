@@ -63,8 +63,28 @@ angular
                 templateUrl: 'views/admin/login.html',
                 url: '/admin/login'
             })
-            .state('dashboard.umkm-index', {
+            .state('dashboard.umkm', {
                 templateUrl: 'views/umkm/index.html',
-                url: '/umkm/index'
+                url: '/umkm'
+            })
+            .state('dashboard.coa', {
+                templateUrl: 'views/umkm/index.html',
+                url: '/transaksi/coa'
+            })
+            .state('dashboard.jurnal', {
+                templateUrl: 'views/umkm/index.html',
+                url: '/transaksi/jurnal'
+            })
+            .state('dashboard.tutup-buku', {
+                templateUrl: 'views/umkm/index.html',
+                url: '/transaksi/tutup-buku'
+            })
+            .state('dashboard.laporan-jurnal', {
+                templateUrl: 'views/umkm/index.html',
+                url: '/transaksi/laporan-jurnal'
+            })
+            .state('dashboard.buku-besar', {
+                templateUrl: 'views/umkm/index.html',
+                url: '/transaksi/buku-besar'
             })
     }]);
