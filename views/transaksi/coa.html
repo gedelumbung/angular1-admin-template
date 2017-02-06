@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-lg-12">
-        <h1 class="page-header">Data UMKM Banyuwangi</h1>
+        <h1 class="page-header">Data COA</h1>
     </div>
     <!-- /.col-lg-12 -->
 </div>
@@ -9,7 +9,7 @@
     <div class="col-lg-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                Data UMKM
+                Data COA
             </div>
             <!-- /.panel-heading -->
             <div class="panel-body">
@@ -17,30 +17,30 @@
                     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                         <thead>
                             <tr>
+                                <th>Kode Akun</th>
+                                <th>Nama Akun</th>
+                                <th>Induk</th>
                                 <th>Kode UMKM</th>
-                                <th>Nama UMKM</th>
-                                <th>Pemilik</th>
-                                <th>Alamat</th>
                                 <th><button class="btn btn-success" ng-click="add()"><i class="fa fa-plus-circle" aria-hidden="true"></i> Add New</button></th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr class="odd gradeX" ng-repeat="data in datas">
                                 <td>
+                                    <input type="text" class="form-control" ng-model="data.kode_akun" ng-show="data.editable">
+                                    <span ng-hide="data.editable">{{ data.kode_akun }}</span>
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" ng-model="data.nama_akun" ng-show="data.editable">
+                                    <span ng-hide="data.editable">{{ data.nama_akun }}</span>
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" ng-model="data.induk" ng-show="data.editable">
+                                    <span ng-hide="data.editable">{{ data.induk }}</span>
+                                </td>
+                                <td>
                                     <input type="text" class="form-control" ng-model="data.kode_umkm" ng-show="data.editable">
                                     <span ng-hide="data.editable">{{ data.kode_umkm }}</span>
-                                </td>
-                                <td>
-                                    <input type="text" class="form-control" ng-model="data.nama_umkm" ng-show="data.editable">
-                                    <span ng-hide="data.editable">{{ data.nama_umkm }}</span>
-                                </td>
-                                <td>
-                                    <input type="text" class="form-control" ng-model="data.pemilik" ng-show="data.editable">
-                                    <span ng-hide="data.editable">{{ data.pemilik }}</span>
-                                </td>
-                                <td>
-                                    <input type="text" class="form-control" ng-model="data.alamat" ng-show="data.editable">
-                                    <span ng-hide="data.editable">{{ data.alamat }}</span>
                                 </td>
                                 <td>
                                     <button ng-hide="data.editable" class="btn btn-warning" ng-click="edit($index)"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</button>

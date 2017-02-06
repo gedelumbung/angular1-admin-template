@@ -42,18 +42,7 @@ angular
             })
             .state('dashboard.home', {
                 url: '/home',
-                controller: 'MainCtrl',
                 templateUrl: 'views/dashboard/home.html',
-                resolve: {
-                    loadMyFiles: function($ocLazyLoad) {
-                        return $ocLazyLoad.load({
-                            name: 'ngAdmin',
-                            files: [
-                                'scripts/controllers/main.js'
-                            ]
-                        })
-                    }
-                }
             })
             .state('dashboard.table', {
                 templateUrl: 'views/table.html',
@@ -65,11 +54,33 @@ angular
             })
             .state('dashboard.umkm', {
                 templateUrl: 'views/umkm/index.html',
-                url: '/umkm'
+                url: '/umkm',
+                controller: 'UmkmCtrl',
+                resolve: {
+                    loadMyFiles: function($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            name: 'ngAdmin',
+                            files: [
+                                'scripts/controllers/umkm.js'
+                            ]
+                        })
+                    }
+                }
             })
             .state('dashboard.coa', {
-                templateUrl: 'views/umkm/index.html',
-                url: '/transaksi/coa'
+                templateUrl: 'views/transaksi/coa.html',
+                url: '/transaksi/coa',
+                controller: 'CoaCtrl',
+                resolve: {
+                    loadMyFiles: function($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            name: 'ngAdmin',
+                            files: [
+                                'scripts/controllers/coa.js'
+                            ]
+                        })
+                    }
+                }
             })
             .state('dashboard.jurnal', {
                 templateUrl: 'views/umkm/index.html',
