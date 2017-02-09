@@ -114,7 +114,7 @@ angular
             })
             .state('dashboard.laporan-jurnal', {
                 templateUrl: 'views/laporan/jurnal.html',
-                url: '/transaksi/laporan-jurnal',
+                url: '/laporan/jurnal',
                 controller: 'LaporanJurnalCtrl',
                 resolve: {
                     loadMyFiles: function($ocLazyLoad) {
@@ -128,7 +128,18 @@ angular
                 }
             })
             .state('dashboard.buku-besar', {
-                templateUrl: 'views/umkm/index.html',
-                url: '/transaksi/buku-besar'
+                templateUrl: 'views/laporan/buku_besar.html',
+                url: '/laporan/buku-besar',
+                controller: 'LaporanBukuBesarCtrl',
+                resolve: {
+                    loadMyFiles: function($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            name: 'ngAdmin',
+                            files: [
+                                'scripts/controllers/laporan_buku_besar.js'
+                            ]
+                        })
+                    }
+                }
             })
     }]);
