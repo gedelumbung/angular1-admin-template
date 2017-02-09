@@ -98,8 +98,19 @@ angular
                 }
             })
             .state('dashboard.tutup-buku', {
-                templateUrl: 'views/umkm/index.html',
-                url: '/transaksi/tutup-buku'
+                templateUrl: 'views/transaksi/tutup_buku.html',
+                url: '/transaksi/tutup-buku',
+                controller: 'TutupBukuCtrl',
+                resolve: {
+                    loadMyFiles: function($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            name: 'ngAdmin',
+                            files: [
+                                'scripts/controllers/tutup_buku.js'
+                            ]
+                        })
+                    }
+                }
             })
             .state('dashboard.laporan-jurnal', {
                 templateUrl: 'views/umkm/index.html',
