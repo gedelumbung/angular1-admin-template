@@ -83,8 +83,19 @@ angular
                 }
             })
             .state('dashboard.jurnal', {
-                templateUrl: 'views/umkm/index.html',
-                url: '/transaksi/jurnal'
+                templateUrl: 'views/transaksi/jurnal.html',
+                url: '/transaksi/jurnal',
+                controller: 'JurnalCtrl',
+                resolve: {
+                    loadMyFiles: function($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            name: 'ngAdmin',
+                            files: [
+                                'scripts/controllers/jurnal.js'
+                            ]
+                        })
+                    }
+                }
             })
             .state('dashboard.tutup-buku', {
                 templateUrl: 'views/umkm/index.html',
