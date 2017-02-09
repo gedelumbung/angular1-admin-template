@@ -113,8 +113,19 @@ angular
                 }
             })
             .state('dashboard.laporan-jurnal', {
-                templateUrl: 'views/umkm/index.html',
-                url: '/transaksi/laporan-jurnal'
+                templateUrl: 'views/laporan/jurnal.html',
+                url: '/transaksi/laporan-jurnal',
+                controller: 'LaporanJurnalCtrl',
+                resolve: {
+                    loadMyFiles: function($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            name: 'ngAdmin',
+                            files: [
+                                'scripts/controllers/laporan_jurnal.js'
+                            ]
+                        })
+                    }
+                }
             })
             .state('dashboard.buku-besar', {
                 templateUrl: 'views/umkm/index.html',
