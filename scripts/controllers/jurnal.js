@@ -65,4 +65,45 @@ angular.module("ngAdmin").controller("JurnalCtrl", function($scope, $position) {
             editable: true
         });
     };
+
+    $scope.coa = [
+        {
+            kode_akun: "AKUN001",
+            nama_akun: "Lancar Jaya Handicraft",
+            induk: "Muncar",
+            kode_umkm: "UMKM001"
+        },
+        {
+            kode_akun: "AKUN002",
+            nama_akun: "Asli Osing Berkah",
+            induk: "Kemiren",
+            kode_umkm: "UMKM002"
+        }
+    ];
+
+    $scope.entityCoa = {};
+
+    $scope.editCoa = function(index) {
+        $scope.entity = $scope.coa[index];
+        $scope.entity.index = index;
+        $scope.entity.editable = true;
+    };
+
+    $scope.deleteCoa = function(index) {
+        $scope.coa.splice(index, 1);
+    };
+
+    $scope.saveCoa = function(index) {
+        $scope.coa[index].editable = false;
+    };
+
+    $scope.addCoa = function() {
+        $scope.coa.push({
+            kode_umkm: "",
+            nama_akun: "",
+            induk: "",
+            kode_akun: "",
+            editable: true
+        });
+    };
 });

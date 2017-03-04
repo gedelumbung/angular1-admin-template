@@ -48,14 +48,6 @@ angular
                     url: "/home",
                     templateUrl: "views/dashboard/home.html"
                 })
-                .state("dashboard.table", {
-                    templateUrl: "views/table.html",
-                    url: "/table"
-                })
-                .state("dashboard.admin", {
-                    templateUrl: "views/admin/login.html",
-                    url: "/admin/login"
-                })
                 .state("dashboard.umkm", {
                     templateUrl: "views/umkm/index.html",
                     url: "/umkm",
