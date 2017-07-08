@@ -1,2 +1,5 @@
 .DS_Store
 bower_components/
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
